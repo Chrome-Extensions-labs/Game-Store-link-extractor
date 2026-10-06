@@ -6,7 +6,7 @@
 [![Gist](https://img.shields.io/badge/gist.github-version_of_this_repository-DCDCDC?style=for-the-badge&logo=github)](https://gist.github.com/OstinUA/0e3a90ba518e0c6bac3311f14f0f7f5e)
 
 [![Chrome Store](https://img.shields.io/badge/platform-Chrome_Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/search/OstinUA)
-[![Chrome Portfolio](https://img.shields.io/badge/Chrome_Web_Store-Portfolio-34A853?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ostinua.github.io/Chrome-Web-Store_Developer-List/)
+[![Chrome Portfolio](https://img.shields.io/badge/Chrome_Web_Store-Portfolio-34A853?style=for-the-badge&logo=google-chrome&logoColor=white)](https://devs-in-exile.pages.dev/extensions)
 
 [![Manifest](https://img.shields.io/badge/Manifest-V3-1a73e8?style=for-the-badge&logo=googlechrome)](manifest.json)
 [![Version](https://img.shields.io/badge/Version-3.2-2f4f4f?style=for-the-badge)](manifest.json)
