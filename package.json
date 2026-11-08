@@ -1,0 +1,20 @@
+{
+  "name": "game-store-link-extractor",
+  "version": "3.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Manifest V3 extension for extracting canonical app links from Google Play and the Apple App Store",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node --test",
+    "check": "npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  }
+}

@@ -1,57 +1,64 @@
 name: Bug Report
-description: Create a report to help us reproduce and fix a bug.
+description: Report incorrect extraction results or a broken popup.
 title: "fix: [Short description of the bug]"
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to report a bug. Please ensure you have read the `CONTRIBUTING.md` and checked for existing duplicate issues before proceeding.
-  
+        Thanks for taking the time to report this. Please check existing open and closed issues for duplicates first.
+
   - type: checkboxes
     id: pre-flight
     attributes:
       label: Pre-flight checks
       options:
-        - label: I have checked existing open and closed issues for duplicates.
+        - label: I checked existing issues for duplicates.
           required: true
-        - label: I am using the latest version of the action/script.
+        - label: I am using the latest version of the extension, reloaded from chrome://extensions/.
           required: true
 
-  - type: textarea
+  - type: input
     id: environment
     attributes:
-      label: Environment Details
-      description: OS version, Python version, and execution context (local vs GitHub Actions).
-      placeholder: e.g., Ubuntu-latest (GitHub Actions), Python 3.11
+      label: Environment
+      description: Chrome version, OS, and extension version from the manifest.
+      placeholder: "e.g. Chrome 130 / Windows 11 / extension 3.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: store-url
+    attributes:
+      label: Store page URL
+      description: The exact Google Play or App Store page where the problem occurs.
+      placeholder: "https://play.google.com/store/search?q=..."
     validations:
       required: true
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to Reproduce
-      description: Provide a clear, step-by-step algorithm to trigger the bug.
+      label: Steps to reproduce
       placeholder: |
-        1. Push commit with the following payload...
-        2. Action triggers process_event.py...
-        3. Fails with error...
+        1. Open the store page and scroll to load results.
+        2. Open the popup.
+        3. ...
     validations:
       required: true
 
   - type: textarea
     id: expected-behavior
     attributes:
-      label: Expected Behavior
-      description: What did you expect the script/action to do?
+      label: Expected result
     validations:
       required: true
 
   - type: textarea
     id: actual-behavior
     attributes:
-      label: Actual Behavior / Traceback
-      description: What actually occurred? Paste stack traces or logs here.
+      label: Actual result
+      description: Paste the links you got and any errors shown in the popup. Do not paste personal data.
       render: shell
     validations:
       required: true
