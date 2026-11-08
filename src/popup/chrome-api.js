@@ -1,17 +1,16 @@
 export async function getActiveTab() {
-  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-  return tabs[0] ?? null;
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  return tab ?? null;
 }
 
-export async function executeInTab(tabId, injectedFunction) {
+export async function executeInTab(tabId, injectedFunction, ...args) {
   const results = await chrome.scripting.executeScript({
     target: { tabId },
     func: injectedFunction,
+    args,
   });
 
-  if (!Array.isArray(results) || results.length === 0) {
-    return [];
-  }
-
-  return Array.isArray(results[0].result) ? results[0].result : [];
+  // Only the top frame is targeted, but the API still returns one entry per frame.
+  const value = results?.[0]?.result;
+  return Array.isArray(value) ? value.filter((item) => typeof item === 'string') : [];
 }

@@ -1,42 +1,39 @@
-[![CONTRIBUTING](https://github.com/OstinUA/Promt-AI-Helper/blob/main/Additional%20files/Image/CONTRIBUTING.svg)](https://github.com/OstinUA)
+# Contributing
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-3e80ed?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OstinUA)
-[![Open Source](https://img.shields.io/badge/Open_Source-Yes-brightgreen?style=for-the-badge&logo=open-source&logoColor=white)](https://github.com/OstinUA)
-[![Views](https://img.shields.io/badge/Profile_Views-%31&#56;%33-blueviolet?style=for-the-badge)](https://github.com/OstinUA)
-[![OstinUA](https://capsule-render.vercel.app/api?type=rect&color=3e80ed&height=2&)](https://github.com/OstinUA)
+Thanks for helping out. Bug reports, fixes, documentation and ideas are all welcome — open an issue first if you want to discuss a larger change.
 
-Hello! Thank you for your interest in contributing to this project. I am always open to any help, whether it's fixing bugs, adding new features, improving documentation, or just sharing fresh ideas. 
+## Getting set up
 
-This document is not a strict set of rules, but a simple guide on how we can comfortably and productively work together. I am very friendly and will be incredibly glad for absolutely any help!
+```bash
+git clone https://github.com/Chrome-Extensions-labs/Game-Store-link-extractor.git
+cd Game-Store-link-extractor
+npm ci
+```
 
-## ⬢ How You Can Help
+Load the directory as an unpacked extension from `chrome://extensions/` and reload it after each change. There is no build step.
 
-- **Have a cool idea?** You can create an Issue to discuss it first, or just jump straight in and open a Pull Request! Do whatever is more comfortable for you. We can always figure out the details together to make the project better.
-- **Found a bug?** Open an Issue and briefly describe what went wrong, or just fix it right away and send a PR.
-- **Ready to write code?** Feel free to fork the repository and open a Pull Request immediately. I will review it, help out if needed, and take care of the rest.
-- **Improving documentation.** Fixing typos, expanding instructions, or translating — absolutely any help is highly valuable.
+## Before opening a pull request
 
-## ⬢ Pull Request Process
+```bash
+npm test
+npm run lint
+```
 
-The workflow here is as straightforward as possible:
+Both commands must pass. New behaviour needs a test: URL rules belong in `tests/store-detection.test.js`, extraction rules in `tests/injected-collector.test.js`.
 
-1. Fork this repository.
-2. Create a new branch for your changes (`git checkout -b feature/my-awesome-idea` or `git checkout -b bugfix/issue-123`).
-3. Make your changes and commit them (`git commit -m "Add new awesome feature"`).
-4. Push the changes to your fork (`git push origin feature/my-awesome-idea`).
-5. Open a Pull Request to this repository.
+A few conventions:
 
-## ⬢ A Few Simple Requests
+- Plain ES modules, 2-space indentation, LF line endings, single quotes (see `.editorconfig`).
+- Comments explain *why*, not *what*, and are written in English.
+- The injected collector in `src/extractors/injected-collector.js` must stay self-contained — Chrome serializes its source into the tab, so module imports do not work there.
+- Keep permissions minimal. Do not add host permissions without a documented need.
+- Update `README.md` when behaviour changes and bump the version in `manifest.json` and `package.json` together.
 
-- Try to stick to the code style already used in the project.
-- Make your commit messages clear so it's easy to understand what changed.
-- If your Pull Request resolves a specific Issue, mention its number in the description (e.g., `Closes #42`).
-- If the logic changes, please update the relevant section in the README.
+## Pull request process
 
-## ⬢ Feedback
+1. Fork the repository and create a branch (`feature/...` or `fix/...`).
+2. Make the change with a focused, descriptive commit message.
+3. Push to your fork and open a PR; reference the issue it closes.
+4. Fill in the PR template, including what you tested on a real store page.
 
-I try to review all Issues and Pull Requests as quickly as possible. Don't worry if your code isn't perfect — I'll review it, suggest tweaks, and help merge it. If I haven't replied in a while, don't hesitate to ping me in the comments.
-
-The main rule is mutual respect. Welcome, and thank you for your contribution!
-
-[![OstinUA](https://capsule-render.vercel.app/api?type=rect&color=3e80ed&height=2&)](https://github.com/OstinUA)
+Reviews are friendly and collaborative. If something needs work, we will point to the exact line and help you get it there.

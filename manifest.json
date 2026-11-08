@@ -1,14 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Game Store Link Extractor",
-  "version": "3.3",
-  "description": "Extracts app links from Google Play and Apple App Store",
+  "version": "3.4.0",
+  "description": "Extract canonical app URLs from Google Play and the Apple App Store",
+  "minimum_chrome_version": "116",
   "permissions": ["activeTab", "scripting"],
-  "host_permissions": [
-    "https://play.google.com/*", 
-    "https://apps.apple.com/*"
-  ],
   "action": {
+    "default_title": "Extract app links from this store page",
     "default_popup": "popup.html",
     "default_icon": {
       "128": "icons/icon128.png"
@@ -16,5 +14,14 @@
   },
   "icons": {
     "128": "icons/icon128.png"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Open the link extractor"
+    }
   }
 }

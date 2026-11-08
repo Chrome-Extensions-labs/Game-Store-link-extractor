@@ -1,35 +1,40 @@
 name: Feature Request
-description: Suggest an enhancement or a new feature for the LLM pipeline.
+description: Suggest an improvement to the extension or its developer workflow.
 title: "feat: [Short description of the feature]"
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for suggesting an improvement! Please provide detailed context so we can understand the value of this feature.
+        Thanks for suggesting an improvement. Please describe the workflow you are trying to speed up.
 
   - type: textarea
     id: problem-context
     attributes:
-      label: Problem Context
-      description: Explain the problem your proposed enhancement solves. Is your feature request related to a specific frustration?
-      placeholder: I'm always frustrated when...
+      label: Problem context
+      description: What is slow, confusing or missing today? Is there a specific store page that triggered it?
     validations:
       required: true
 
   - type: textarea
     id: proposed-solution
     attributes:
-      label: Proposed Solution & Use Cases
-      description: Describe your ideal solution and real-world scenarios where this feature would be beneficial.
-      placeholder: It would be great if the action could automatically...
+      label: Proposed solution and use cases
+      description: Describe the behaviour you expect and who benefits from it.
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives Considered
-      description: Have you considered any alternative solutions or workarounds?
+      label: Alternatives considered
     validations:
       required: false
+
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: This can be implemented without new Chrome permissions.
+          required: false

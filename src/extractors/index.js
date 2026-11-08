@@ -1,7 +1,2 @@
-import { extractGooglePlayLinks } from './google-play.js';
-import { extractAppleStoreLinks } from './apple-store.js';
-
-export {
-  extractGooglePlayLinks,
-  extractAppleStoreLinks,
-};
+export { extractStoreLinks } from './injected-collector.js';
+export { STORE_EXTRACTION_CONFIG } from './store-config.js';

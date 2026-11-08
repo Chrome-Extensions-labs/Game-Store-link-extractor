@@ -1,27 +1,27 @@
 import { STORE_TYPES } from './constants.js';
 
+const STORE_HOSTS = new Map([
+  ['play.google.com', STORE_TYPES.GOOGLE_PLAY],
+  ['apps.apple.com', STORE_TYPES.APPLE_APP_STORE],
+]);
+
+// The activeTab grant is origin-scoped, so only first-party HTTPS origins are
+// eligible. Subdomains and lookalike hosts must never reach script injection.
 export function detectStoreType(urlString) {
-  if (!urlString || typeof urlString !== 'string') {
+  if (typeof urlString !== 'string' || urlString === '') {
     return null;
   }
 
-  let parsedUrl;
-
+  let url;
   try {
-    parsedUrl = new URL(urlString);
+    url = new URL(urlString);
   } catch {
     return null;
   }
 
-  const host = parsedUrl.hostname.toLowerCase();
-
-  if (host === 'play.google.com' || host.endsWith('.play.google.com')) {
-    return STORE_TYPES.GOOGLE_PLAY;
+  if (url.protocol !== 'https:') {
+    return null;
   }
 
-  if (host === 'apps.apple.com' || host.endsWith('.apps.apple.com')) {
-    return STORE_TYPES.APPLE_APP_STORE;
-  }
-
-  return null;
+  return STORE_HOSTS.get(url.hostname.toLowerCase()) ?? null;
 }

@@ -1,23 +1,26 @@
 ## Description
-## Related Issue(s)
-Resolves #
 
-## Type of Change
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
-- [ ] Refactoring / Technical Debt
+<!-- What changed and why? Link the issue this closes. -->
 
-## Testing Performed
-- [ ] Local execution of `process_event.py`
-- [ ] Verified JSON output structure from Gemini API
-- [ ] Tested GitHub Action workflow trigger (dry-run)
-- [ ] Other: 
+Closes #
 
-## Checklist
-- [ ] My code follows the code style of this project (PEP-8).
-- [ ] I have performed a self-review of my own code.
-- [ ] I have commented my code, particularly in hard-to-understand areas.
-- [ ] I have made corresponding changes to the documentation (README.md, etc.).
-- [ ] My changes generate no new warnings or errors in the CI pipeline.
+## Type of change
+
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Refactor / technical debt
+- [ ] Documentation
+- [ ] CI / tooling
+
+## Verification
+
+- [ ] `npm test` passes
+- [ ] `npm run lint` passes
+- [ ] Loaded the unpacked extension in Chrome and checked a Google Play page
+- [ ] Checked an Apple App Store page (localized URL included)
+- [ ] Checked the unsupported-site and empty-result states
+- [ ] Confirmed no new permissions were requested
+
+## Notes for the reviewer
+
+<!-- Store pages change their markup often — mention any selector or URL assumption you touched. -->
